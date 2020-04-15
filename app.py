@@ -14,7 +14,7 @@ from flask import jsonify
 
 # Define the database connection parameters
 username = 'postgres'  # Ideally this would come from config.py (or similar)
-password = 'Wieczorek1!'  # Ideally this would come from config.py (or similar)
+password = 'your password'  # Ideally this would come from config.py (or similar)
 database_name = 'forest_fires' # Created in Week 9, Night 1, Exercise 08-Stu_CRUD 
 connection_string = f'postgresql://{username}:{password}@localhost:5432/{database_name}'
 
