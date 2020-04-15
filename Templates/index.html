@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forest Fire Dashboard</title>
+
+    <!-- Import the Plotly library. Note that this has to 
+         happen before we importa any code that uses Plotly. -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- Import the D3 library. Note that this has to happen 
+    before we import any code that uses D3. -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- Import some CSS, just to show how it's done. -->
+    <link rel="stylesheet" type="text/css" href="static/style.css"></link>
+</head>
+
+<body>
+    <h1>This is index.html</h1>
+
+    <h2>Note: This demonstration assumes you have the GlobalFirePower database we created</h2>
+    <h2>during Week 9, Night 1, Activity 08-Stu_CRUD. If you don't have this database, you'll</h2> 
+    <h2>have to modify the code in app.py accordingly.</h2>
+
+    <h3>Also, be sure to update the PostgreSQL username and password in app.py!</h3>
+
+    <!-- Placeholder for a plot -->
+    <div id="plot"></div>
+
+    <!-- Create a hyperlink that calls the '/other' route when clicked. 
+         Go to app.py to see how that '/other' route is defined. -->
+    <a href="app.py/fires">Click here for the other page!</a>
+
+    <!-- Import the main JavaScript code. -->
+    <script type="text/javascript" src="static/main.js"></script>
+
+</body>
+
+</html>
