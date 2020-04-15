@@ -55,9 +55,10 @@ def OtherRoute():
 
 @app.route("/fires")
 def forest_fires():
-    fire_json = fire_data
-    print(fire_json)
-    return "meh"
+    print(fire_data)
+
+    fire_json = fire_data.to_json()
+    return (fire_json)
     #fire_data is a dictionary of lists created earlier in the script
 if __name__ == '__main__':
     app.run(debug=True)
