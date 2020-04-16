@@ -6,5 +6,5 @@ d3.json("/fires").then(function (data) {
 
     // ... and dump that JSON to the console for inspection
     console.log(data); 
-    
+
 });

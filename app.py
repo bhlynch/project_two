@@ -14,7 +14,7 @@ from flask import jsonify
 
 # Define the database connection parameters
 username = 'postgres'  # Ideally this would come from config.py (or similar)
-password = 'your password'  # Ideally this would come from config.py (or similar)
+password = 'password'  # Ideally this would come from config.py (or similar)
 database_name = 'forest_fires' # Created in Week 9, Night 1, Exercise 08-Stu_CRUD 
 connection_string = f'postgresql://{username}:{password}@localhost:5432/{database_name}'
 
@@ -42,14 +42,26 @@ def IndexRoute():
 def forest_fires():
     '''Query dataase'''
     session = Session(engine)
-    results = session.query(table.fire_id)
+    results = session.query(table.fire_id, table.fire_name, table.fire_size, table.STAT_CAUSE_DESCR ,table.latitude, table.longitude, table.state_code, table.disc_clean_date, table.cont_clean_date, table.Vegitation)
     session.close()
     all_fires = []
-    for fire_id in results:
+    for fire_id, fire_name, fire_size, STAT_CAUSE_DESCR, latitude, longitude, state_code, disc_clean_date, cont_clean_date, Vegitation in results:
         dict = {}
         dict['fire_id'] = fire_id
+        dict['fire_name'] = fire_name
+        dict['fire_size'] = fire_size
+        dict['STAT_CAUSE_DESCR'] = STAT_CAUSE_DESCR
+        dict['latitude'] = latitude 
+        dict['longitude'] = longitude
+        dict['state_code'] = state_code
+        dict['disc_clean_date'] = disc_clean_date 
+        dict['cont_clean_date'] = cont_clean_date
+        dict['Vegitation'] = Vegitation 
+        all_fires.append(dict)
     
     return jsonify(all_fires)
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
